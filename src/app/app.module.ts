@@ -6,7 +6,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { CustomAngularMaterialsModule } from './@core/angular-materials.module';
 import { AppComponent } from './app.component';
-import { TermsOfUseComponent } from './@shared/components/terms-of-use/terms-of-use.component';
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +33,6 @@ var config = {
 @NgModule({
   declarations: [
     AppComponent,
-    TermsOfUseComponent,
     PrivacyComponent,
     NotFoundComponent,
     HomeComponent,

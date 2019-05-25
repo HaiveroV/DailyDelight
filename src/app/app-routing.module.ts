@@ -5,7 +5,6 @@ import { HomeComponent } from './@modules/home/home.component';
 import { VerifyEmailComponent } from './@modules/auth/verify-email/verify-email.component';
 // import { AuthGuard } from './@core/guards/auth.guard';
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
-import { TermsOfUseComponent } from './@shared/components/terms-of-use/terms-of-use.component';
 import { ForgottenPasswordComponent } from './@modules/auth/forgotten-password/forgotten-password.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
@@ -50,10 +49,6 @@ const routes: Routes = [
         path: 'privacy',
         component: PrivacyComponent
     },
-    {
-        path: 'terms',
-        component: TermsOfUseComponent
-    }
 ]
 
 @NgModule({
