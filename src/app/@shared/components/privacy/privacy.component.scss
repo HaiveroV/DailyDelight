@@ -1,0 +1,71 @@
+.parallax1,
+.parallax2,
+.parallax3,
+.parallax4 {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+    */
+  background-attachment: fixed;
+}
+
+.parallax1 {
+  background-image: url("../../../../assets/img/parallax_img_1.jpg");
+  min-height: 600px;
+}
+
+.parallax2 {
+  background-image: url("../../../../assets/img/parallax_img_2.jpg");
+  min-height: 500px;
+}
+
+.parallax3 {
+  background-image: url("../../../../assets/img/parallax_img_3.jpg");
+  min-height: 500px;
+}
+
+.parallax4 {
+  background-image: url("../../../../assets/img/parallax_img_4.jpg");
+  min-height: 500px;
+}
+
+.psection {
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.section-light {
+  background-color: #f4f4f4;
+  color: #666;
+}
+
+.section-dark {
+  background-color: #282e34;
+  color: #ddd;
+}
+
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+section > ul {
+  text-decoration: none;
+}
+
+@media (max-width: 568px){
+    .parallax1, .parallax2, .parallax3, .parallax4{
+        background-attachment: scroll;
+    }
+}
