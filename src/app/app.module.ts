@@ -10,10 +10,8 @@ import { PrivacyComponent } from './@shared/components/privacy/privacy.component
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './@modules/home/home.component';
-import { VerifyEmailComponent } from './@modules/auth/verify-email/verify-email.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
-import { ForgottenPasswordComponent } from './@modules/auth/forgotten-password/forgotten-password.component';
 import { FooterComponent } from './@core/footer/footer.component';
 import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
 import { NavbarComponent } from './@core/navbar/navbar.component';
@@ -36,10 +34,8 @@ var config = {
     PrivacyComponent,
     NotFoundComponent,
     HomeComponent,
-    VerifyEmailComponent,
     RegisterComponent,
     LoginComponent,
-    ForgottenPasswordComponent,
     FooterComponent,
     WelcomeComponent,
     NavbarComponent
