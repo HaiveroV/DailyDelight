@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './@modules/home/home.component';
-import { VerifyEmailComponent } from './@modules/auth/verify-email/verify-email.component';
 // import { AuthGuard } from './@core/guards/auth.guard';
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
-import { ForgottenPasswordComponent } from './@modules/auth/forgotten-password/forgotten-password.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
@@ -32,14 +30,6 @@ const routes: Routes = [
     {
         path: 'welcome',
         component: WelcomeComponent
-    },
-    {
-        path: 'forgotten-password',
-        component: ForgottenPasswordComponent
-    },
-    {
-        path: 'verify-email',
-        component: VerifyEmailComponent
     },
     {
         path: '404',
