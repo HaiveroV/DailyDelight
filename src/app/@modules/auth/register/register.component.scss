@@ -1,0 +1,86 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: rgb(161, 10, 10);
+}
+
+#registerBtn {
+  width: 100%;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #c2185b 0%, #f3618f 51%, #c2185b 100%);
+  box-shadow: 0 4px 15px 0 rgba(194, 24, 92, 0.712);
+}
+
+#registerBtn:hover {
+  background-position: 100% 0;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#registerBtn:focus {
+  outline: none;
+}
+
+#registerContainer {
+  background-color: #424242;
+  margin-top: -10px;
+}
+
+#logNowBtn {
+  padding-left: 10px;
+  color: #c2185b;
+  cursor: pointer;
+  font-size: larger;
+}
+
+hr {
+  background-color: #ffffff;
+  margin-bottom: 0;
+}
+
+#passField {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#confPassField {
+  margin-top: 0.5rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px inherit inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

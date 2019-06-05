@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { AuthService } from '../../../@core/services/auth.service';
+import { Router } from '@angular/router';
+import { AlertService } from '../../../@core/services/alert.service'
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -10,9 +14,15 @@ export class LoginComponent implements OnInit {
 
     loginForm: FormGroup;
 
-    constructor(private fb: FormBuilder) {
+    errorMessage: string = '';
+    loginMessage: string = 'Success ! We Are Logging You In !'
 
-    }
+    constructor(
+        private fb: FormBuilder,
+        public authService: AuthService,
+        public router: Router,
+        private alertService: AlertService
+    ) { }
 
     ngOnInit() {
         this.loginForm = this.fb.group({
@@ -25,13 +35,29 @@ export class LoginComponent implements OnInit {
                 Validators.minLength(6)
             ]],
         })
-
-        this.loginForm.valueChanges.subscribe(console.log);
     }
+
     get email() {
         return this.loginForm.get('email');
     }
+
     get password() {
         return this.loginForm.get('password');
+    }
+
+    tryLogin(value) {
+
+        this.authService.onLogin(value)
+            .then(resolve => {
+                this.alertService.success(this.loginMessage);
+                setTimeout(() => {
+                    this.router.navigate(['/welcome']);
+                }, 3000);
+                
+            }, error => {
+                console.log(this.errorMessage);
+                this.errorMessage = error.message;
+                this.alertService.error(this.errorMessage);
+            })
     }
 }
