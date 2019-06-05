@@ -1,0 +1,8 @@
+<div id="alert-container" class="alert-top-center" *ngFor="let item of alerts">  
+    <div class="alert {{cssClass(item) }}" aria-live="polite" style="display: block;">  
+        <button type="button" class="alert-close-button" role="button" (click)="removeAlert(item)">×</button>  
+        <div class="alert-message">  
+            {{item.message}}  
+        </div>  
+    </div>  
+</div>  
