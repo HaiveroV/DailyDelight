@@ -8,8 +8,8 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/login">Login</a>
-      <a mat-list-item routerLink="/register">Register</a>
+      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/home">Recipes</a>
       <a mat-list-item routerLink="/privacy">Privacy & Policy</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -24,12 +24,13 @@
       </div>
       <span id="navHeading"><strong>{{ title }}</strong></span>
       <span class="firstSpacer"></span>
-      <a routerLink="/home" class="toolbar-links">Home</a>
-      <a routerLink="/privacy" class="toolbar-links">Privacy & Policy</a>
+      <a routerLink="/privacy" class="toolbar-links" id="privacyLink">Privacy & Policy</a>
+      <a routerLink="/home" class="toolbar-links" id="homeLink">Home</a>
+      <a routerLink="/recipes" class="toolbar-links">Recipes</a>
       <span class="secondSpacer"></span>
-      <a routerLink="/login" class="toolbar-links">Login
+      <a routerLink="/login" class="toolbar-links" id="loginLink" >Login
         <img src="../../../assets/icons/login_icon.png" id="logIcon"></a>
-      <a routerLink="/register" class="toolbar-links">Register
+      <a routerLink="/register" class="toolbar-links" id="registerLink">Register
         <img src="../../../assets/icons/register_icon.png" id="regIcon"></a>
     </mat-toolbar>
     <!-- Add Content Here -->

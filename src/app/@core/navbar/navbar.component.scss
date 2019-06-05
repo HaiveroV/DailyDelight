@@ -20,18 +20,6 @@
   display: none;
 }
 
-@media (max-width: 700px) {
-  #navLogo {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  #navHeading {
-    display: none;
-  }
-}
-
 #navLogo {
   height: 40px;
   margin-right: 0.5rem;
@@ -67,9 +55,34 @@
   color: #424242;
 }
 
-@media (max-width: 530px) {
-  #regIcon,
-  #logIcon {
+// @media (max-width: 530px) {
+//   #regIcon,
+//   #logIcon {
+//     display: none;
+//   }
+// }
+
+@media (max-width: 700px) {
+  #navLogo {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #navHeading {
+    display: none;
+  }
+}
+
+@media (max-width: 530px) {
+  #privacyLink,
+  #homeLink {
+    display: none;
+  }
+  .secondSpacer {
+    flex: 0.4;
+  }
+  #loginLink {
+    padding-right: 2rem;
   }
 }
