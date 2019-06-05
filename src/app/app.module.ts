@@ -1,31 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from '../environments/environment';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { AuthService } from './@core/services/auth.service';
+
+import { AuthGuard } from './@core/guards/auth.guard';
+
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { AppRoutingModule } from './app-routing.module';
 import { CustomAngularMaterialsModule } from './@core/angular-materials.module';
+import { AlertModule } from './@modules/alert/alert.module';
+
 import { AppComponent } from './app.component';
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './@modules/home/home.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { FooterComponent } from './@core/footer/footer.component';
 import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
 import { NavbarComponent } from './@core/navbar/navbar.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RecipesComponent } from './@shared/components/recipes/recipes.component';
+import { RecipeDetailsComponent } from './@shared/components/recipes/recipe-details/recipe-details.component';
+import { RecipeItemComponent } from './@shared/components/recipes/recipe-item/recipe-item.component';
+import { RecipeListComponent } from './@shared/components/recipes/recipe-list/recipe-list.component';
 
-var config = {
-  apiKey: "AIzaSyCtrMa720Y_af612fMzUwq7NKaIoCKwNSg",
-  authDomain: "dailydelight-6b195.firebaseapp.com",
-  databaseURL: "https://dailydelight-6b195.firebaseio.com",
-  projectId: "dailydelight-6b195",
-  storageBucket: "dailydelight-6b195.appspot.com",
-  messagingSenderId: "317294291225",
-  appId: "1:317294291225:web:34962cff435727c4"
-};
+
 
 
 @NgModule({
@@ -38,17 +42,26 @@ var config = {
     LoginComponent,
     FooterComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    RecipesComponent,
+    RecipeDetailsComponent,
+    RecipeItemComponent,
+    RecipeListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     CustomAngularMaterialsModule,
+    AlertModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AngularFirestore,
+    AuthGuard
+  ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
