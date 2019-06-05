@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './@modules/home/home.component';
-// import { AuthGuard } from './@core/guards/auth.guard';
+import { AuthGuard } from './@core/guards/auth.guard';
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
 import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
-
+import { RecipesComponent } from './@shared/components/recipes/recipes.component';
 const routes: Routes = [
     {
         path: '',
@@ -32,12 +32,16 @@ const routes: Routes = [
         component: WelcomeComponent
     },
     {
-        path: '404',
-        component: NotFoundComponent
-    },
-    {
         path: 'privacy',
         component: PrivacyComponent
+    },
+    {
+        path: 'recipes',
+        component: RecipesComponent
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
     },
 ]
 
@@ -47,6 +51,6 @@ const routes: Routes = [
     providers: []
 })
 
-export class AppRoutingModule{
+export class AppRoutingModule {
 
 }
