@@ -1,1 +1,37 @@
-<p>recipes main works!</p>
+<mat-card class="card card-1">
+  <div class="img__wrap ">
+    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+    <img class="img" src="../../../../assets/images/3.jpg">
+    <button class="img__text" button mat-raised-button (click)="openDialog()">View Recipe</button>
+  </div>
+  <mat-card-title class="title__wrap">
+    <mat-card-title-text>
+      <span class="md-headline">Home Made Eggs</span>
+    </mat-card-title-text>
+  </mat-card-title>
+  <mat-card-subtitle class="time">French Style
+  </mat-card-subtitle>
+  <mat-card-actions class="actions">
+    <button mat-raised-button color="primary">Edit</button>
+    <button mat-raised-button color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="card card-1">
+  <div class="img__wrap ">
+    <star-rating [starType]="'svg'" [rating]="5"></star-rating>
+    <img class="img" src="../../../../assets/images/2.jpg">
+    <button class="img__text" button mat-raised-button (click)="openDialog()">View Recipe</button>
+  </div>
+  <mat-card-title class="title__wrap">
+    <mat-card-title-text>
+      <span class="md-headline">Home Made Eggs</span>
+    </mat-card-title-text>
+  </mat-card-title>
+  <mat-card-subtitle class="time">French Style
+  </mat-card-subtitle>
+  <mat-card-actions class="actions">
+    <button mat-raised-button color="primary">Edit</button>
+    <button mat-raised-button color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>
