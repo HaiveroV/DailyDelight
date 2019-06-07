@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {
     MatButtonModule, MatCheckboxModule, MatToolbarModule,
     MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatInputModule,
-    MatChipsModule, MatSelectModule
+    MatChipsModule, MatSelectModule, MatDialogModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatChipsModule,
         MatSelectModule,
         ReactiveFormsModule,
+        MatDialogModule
     ],
     declarations: []
 })

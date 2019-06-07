@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
 
     errorMessage: string = '';
-    loginMessage: string = 'Success ! We Are Logging You In !'
+    loginMessage: string = "Welcome! "
 
     constructor(
         private fb: FormBuilder,
@@ -46,14 +46,12 @@ export class LoginComponent implements OnInit {
     }
 
     tryLogin(value) {
-
         this.authService.onLogin(value)
             .then(resolve => {
-                this.alertService.success(this.loginMessage);
+                this.alertService.success(this.loginMessage + this.email.value);
                 setTimeout(() => {
                     this.router.navigate(['/welcome']);
                 }, 3000);
-                
             }, error => {
                 console.log(this.errorMessage);
                 this.errorMessage = error.message;

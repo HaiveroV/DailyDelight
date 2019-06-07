@@ -9,7 +9,7 @@
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/home">Home</a>
-      <a mat-list-item routerLink="/home">Recipes</a>
+      <a mat-list-item routerLink="/recipes" *ngIf="user">Recipes</a>
       <a mat-list-item routerLink="/privacy">Privacy & Policy</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -26,12 +26,16 @@
       <span class="firstSpacer"></span>
       <a routerLink="/privacy" class="toolbar-links" id="privacyLink">Privacy & Policy</a>
       <a routerLink="/home" class="toolbar-links" id="homeLink">Home</a>
-      <a routerLink="/recipes" class="toolbar-links">Recipes</a>
+      <a routerLink="/recipes" class="toolbar-links" id="recipesLink" *ngIf="user">Recipes</a>
       <span class="secondSpacer"></span>
-      <a routerLink="/login" class="toolbar-links" id="loginLink" >Login
+      <a routerLink="/login" class="toolbar-links" id="loginLink" *ngIf="!user">Login
         <img src="../../../assets/icons/login_icon.png" id="logIcon"></a>
-      <a routerLink="/register" class="toolbar-links" id="registerLink">Register
-        <img src="../../../assets/icons/register_icon.png" id="regIcon"></a>
+      <a routerLink="/register" class="toolbar-links" id="registerLink" *ngIf="!user">Register
+        <img src="../../../assets/icons/register_icon.png" id="regIcon">
+      </a>
+      <button type="button" mat-button (click)="logOut()" *ngIf="user">Log Out
+        <img src="../../../assets/icons/logout_icon.ico" id="logOutIcon">
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>
