@@ -9,6 +9,7 @@ import { RegisterComponent } from './@modules/auth/register/register.component';
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
 import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
 import { RecipesComponent } from './@shared/components/recipes/recipes.component';
+
 const routes: Routes = [
     {
         path: '',

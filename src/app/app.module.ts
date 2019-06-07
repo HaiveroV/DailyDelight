@@ -1,19 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { AuthService } from './@core/services/auth.service';
-
-import { AuthGuard } from './@core/guards/auth.guard';
 
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { AuthService } from './@core/services/auth.service';
+
+import { AuthGuard } from './@core/guards/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomAngularMaterialsModule } from './@core/angular-materials.module';
 import { AlertModule } from './@modules/alert/alert.module';
+import { StarRatingModule } from 'angular-star-rating';
 
 import { AppComponent } from './app.component';
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
@@ -26,10 +29,6 @@ import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
 import { NavbarComponent } from './@core/navbar/navbar.component';
 import { RecipesComponent } from './@shared/components/recipes/recipes.component';
 import { RecipeDetailsComponent } from './@shared/components/recipes/recipe-details/recipe-details.component';
-import { RecipeItemComponent } from './@shared/components/recipes/recipe-item/recipe-item.component';
-import { RecipeListComponent } from './@shared/components/recipes/recipe-list/recipe-list.component';
-
-
 
 
 @NgModule({
@@ -44,9 +43,7 @@ import { RecipeListComponent } from './@shared/components/recipes/recipe-list/re
     WelcomeComponent,
     NavbarComponent,
     RecipesComponent,
-    RecipeDetailsComponent,
-    RecipeItemComponent,
-    RecipeListComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +52,9 @@ import { RecipeListComponent } from './@shared/components/recipes/recipe-list/re
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     CustomAngularMaterialsModule,
-    AlertModule
+    AlertModule,
+    StarRatingModule.forRoot(),
+
   ],
   providers: [
     AuthService,
@@ -65,4 +64,6 @@ import { RecipeListComponent } from './@shared/components/recipes/recipe-list/re
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
-export class AppModule { }
+export class AppModule {
+
+ }
