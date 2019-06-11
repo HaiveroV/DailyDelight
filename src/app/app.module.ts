@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
@@ -11,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AuthService } from './@core/services/auth.service';
+import { RecipeService } from './@core/services/recipe.service';
 
 import { AuthGuard } from './@core/guards/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,10 +27,10 @@ import { HomeComponent } from './@modules/home/home.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { FooterComponent } from './@core/footer/footer.component';
-import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
 import { NavbarComponent } from './@core/navbar/navbar.component';
 import { RecipesComponent } from './@shared/components/recipes/recipes.component';
-import { RecipeDetailsComponent } from './@shared/components/recipes/recipe-details/recipe-details.component';
+import { AddRecipeComponent } from './@shared/components/recipes/add-recipe/add-recipe.component';
+import { RecipeDialogComponent } from './@shared/components/recipes/recipe-dialog/recipe-dialog.component';
 
 
 @NgModule({
@@ -40,10 +42,10 @@ import { RecipeDetailsComponent } from './@shared/components/recipes/recipe-deta
     RegisterComponent,
     LoginComponent,
     FooterComponent,
-    WelcomeComponent,
     NavbarComponent,
     RecipesComponent,
-    RecipeDetailsComponent
+    AddRecipeComponent,
+    RecipeDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,16 +56,19 @@ import { RecipeDetailsComponent } from './@shared/components/recipes/recipe-deta
     CustomAngularMaterialsModule,
     AlertModule,
     StarRatingModule.forRoot(),
+    FormsModule
 
   ],
+  entryComponents: [RecipeDialogComponent],
   providers: [
     AuthService,
+    AuthGuard,
     AngularFirestore,
-    AuthGuard
+    RecipeService
   ],
   bootstrap: [AppComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {
 
- }
+}

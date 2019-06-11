@@ -8,9 +8,9 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home">Home</a>
-      <a mat-list-item routerLink="/recipes" *ngIf="user">Recipes</a>
-      <a mat-list-item routerLink="/privacy">Privacy & Policy</a>
+      <a mat-list-item routerLink="/home">Начало</a>
+      <a mat-list-item routerLink="/recipes" *ngIf="user">Рецепти</a>
+      <a mat-list-item routerLink="/privacy">Поверителност и политика</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,20 +20,23 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div>
-        <img class="img-fluid" src="../../../assets/icons/favicon.ico" id="navLogo">
+        <a routerLink="/home" style="text-decoration: none;">
+          <img class="img-fluid" src="../../../assets/icons/favicon.ico" id="navLogo">
+          <span id="navHeading"><strong id="linkLogo">{{ title }}</strong></span>
+        </a>
       </div>
-      <span id="navHeading"><strong>{{ title }}</strong></span>
       <span class="firstSpacer"></span>
-      <a routerLink="/privacy" class="toolbar-links" id="privacyLink">Privacy & Policy</a>
-      <a routerLink="/home" class="toolbar-links" id="homeLink">Home</a>
-      <a routerLink="/recipes" class="toolbar-links" id="recipesLink" *ngIf="user">Recipes</a>
+      <a routerLink="/privacy" class="toolbar-links" id="privacyLink">Поверителност и Политика</a>
+      <a routerLink="/home" class="toolbar-links" id="homeLink">Начало</a>
+      <a routerLink="/recipes" class="toolbar-links" id="recipesLink" *ngIf="user">Рецепти</a>
+      <a routerLink="/add-recipe" class="toolbar-links" id="" *ngIf="user">Добави Рецепта</a>
       <span class="secondSpacer"></span>
-      <a routerLink="/login" class="toolbar-links" id="loginLink" *ngIf="!user">Login
+      <a routerLink="/login" class="toolbar-links" id="loginLink" *ngIf="!user">Влез
         <img src="../../../assets/icons/login_icon.png" id="logIcon"></a>
-      <a routerLink="/register" class="toolbar-links" id="registerLink" *ngIf="!user">Register
+      <a routerLink="/register" class="toolbar-links" id="registerLink" *ngIf="!user">Регистрация
         <img src="../../../assets/icons/register_icon.png" id="regIcon">
       </a>
-      <button type="button" mat-button (click)="logOut()" *ngIf="user">Log Out
+      <button type="button" mat-button (click)="logOut()" *ngIf="user">Излез
         <img src="../../../assets/icons/logout_icon.ico" id="logOutIcon">
       </button>
     </mat-toolbar>
@@ -41,3 +44,4 @@
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<alert-app></alert-app>

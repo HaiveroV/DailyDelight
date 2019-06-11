@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
     registerForm: FormGroup;
     errorMessage: string = "";
-    registerMessage: string = "Registration Successfull! Redirecting To Login ...";
+    registerMessage: string = "Регистрацията е успешна !";
     
     constructor(
         private fb: FormBuilder,

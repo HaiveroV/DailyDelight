@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../services/auth.service';
 import { AlertService } from '../services/alert.service';
 
@@ -14,9 +14,9 @@ import { AlertService } from '../services/alert.service';
 })
 export class NavbarComponent implements OnInit {
 
-  title = 'DailyDelight';
+  title = 'DailyDelight™';
   shortTitle = 'D & D';
-  logoutMsg = 'Bye Bye! Sorry to see you leave.'
+  logoutMsg = 'Вие излязохте от профила си.'
   user: firebase.User;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -43,11 +43,10 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     this.afAuth.auth.signOut().then(() => {
-      setTimeout(() => {
-        this.alertService.warn(this.logoutMsg);
-        this.router.navigate(['/login']);
-    }, 4000);
-    });
+
+      this.alertService.warn(this.logoutMsg);
+      this.router.navigate(['/login']);
+    })
   }
 
 }

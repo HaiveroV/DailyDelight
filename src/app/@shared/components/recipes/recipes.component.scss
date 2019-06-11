@@ -1,3 +1,8 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
 .title__body {
   margin-left: 100px;
   margin-top: 45px;
@@ -11,14 +16,24 @@
 }
 
 .card {
-  background: #424242;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  height: 30vw;
-  margin: 3rem;
+  height: 42vw;
+  margin: 1rem;
   position: relative;
-  width: 27vw;
+  width: 30vw;
+  margin-bottom: 50px;
+  float: left;
+  font-size: 16px !important;
 }
 
 .card-1 {
@@ -35,7 +50,6 @@
   text-align: center;
   font-stretch: 100%;
   float: right;
-  margin: 5px;
   padding: 5px;
   max-width: 100%;
 }
@@ -174,6 +188,79 @@
   width: 100%;
 }
 
-.progress{
+.progress {
   float: right;
+}
+
+#editBtn {
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #00f260 0%, #05e690 51%, #00f260 100%);
+  box-shadow: 0 4px 15px 0 rgba(0, 242, 96, 0.712);
+}
+
+#editBtn:hover {
+  background-position: 100% 0;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#editBtn:focus {
+  outline: none;
+}
+
+#deleteBtn {
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #f00000 0%, #dc281e 51%, #f00000 100%);
+  box-shadow: 0 4px 15px 0 rgba(240, 0, 0, 0.712);
+}
+
+#deleteBtn:hover {
+  background-position: 100% 0;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#deleteBtn:focus {
+  outline: none;
+}
+.loadingLine {
+  color: snow;
+  width: 80%;
+}
+
+#noRecipeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #00f260 0%, #05e690 51%, #00f260 100%);
+  box-shadow: 0 4px 15px 0 rgba(0, 242, 96, 0.712);
+}
+
+#noRecipeBtn:hover {
+  background-position: 100% 0;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#noRecipeBtn:focus {
+  outline: none;
 }

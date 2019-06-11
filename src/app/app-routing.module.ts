@@ -7,8 +7,8 @@ import { PrivacyComponent } from './@shared/components/privacy/privacy.component
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
 import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
-import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
 import { RecipesComponent } from './@shared/components/recipes/recipes.component';
+import { AddRecipeComponent } from './@shared/components/recipes/add-recipe/add-recipe.component'
 
 const routes: Routes = [
     {
@@ -29,16 +29,16 @@ const routes: Routes = [
         component: RegisterComponent
     },
     {
-        path: 'welcome',
-        component: WelcomeComponent
-    },
-    {
         path: 'privacy',
         component: PrivacyComponent
     },
     {
         path: 'recipes',
         component: RecipesComponent
+    },
+    {
+        path: 'add-recipe',
+        component: AddRecipeComponent
     },
     {
         path: '**',

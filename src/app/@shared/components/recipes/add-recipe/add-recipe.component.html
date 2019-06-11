@@ -1,0 +1,23 @@
+<div id="addRecipeContainer">
+<mat-form (ngSubmit)="onSubmit()">
+  <img src="../../../../../assets/icons/hamburger-icon.png" id="hambImgTop">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Въведете Заглавие на Вашата Рецепта:" [(ngModel)]="recipe.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Начин на приготвяне:" [(ngModel)]="recipe.description" name="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Поставете линк към снимка на ястието:" [(ngModel)]="recipe.imagePath"
+        name="imagePath">
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">Добави рецепта!</button>
+  </div>
+  <img src="../../../../../assets/icons/hamburger-icon.png" id="hambImgBot">
+
+</mat-form>
+<alert-app></alert-app>
+</div>

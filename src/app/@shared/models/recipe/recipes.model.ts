@@ -1,15 +1,10 @@
-export class Recipe {
-    public name: string;
-    public description: string;
-    public imagePath: string;
+export interface Recipe {
 
-    /**
-     *
-     */
-    constructor(name:string, desc: string, imagePath: string) {
-        this.name = name;
-        this.description = desc;
-        this.imagePath = imagePath;
-        
-    }
+    id?: string;
+    name?: string;
+    description?: string;
+    imagePath?: string;
+    author?: string;
+    rating?: number;
+
 }

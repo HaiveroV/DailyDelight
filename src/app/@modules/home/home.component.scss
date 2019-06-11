@@ -1,0 +1,25 @@
+.carousel-item {
+  height: 90vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#firstItem {
+  background-image: url("../../../assets/gifs/pissed.gif");
+}
+
+#secondItem {
+  background-image: url("../../../assets/gifs/bad.gif");
+}
+
+#thirdItem {
+  background-image: url("../../../assets/gifs/good.gif");
+}
+
+.display-4{
+  color: #c2185b;
+}

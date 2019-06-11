@@ -1,5 +1,5 @@
 <mat-card id="registerContainer">
-    <mat-card-title>Register</mat-card-title>
+    <mat-card-title>Регистрация</mat-card-title>
     <mat-card-content>
         <form [formGroup]="registerForm">
 
@@ -7,7 +7,7 @@
                 <mat-form-field>
                     <input type="email" matInput placeholder="Email" formControlName="email">
                     <mat-error *ngIf="email.invalid && email.touched">
-                        Enter a valid email!
+                        Въведете правилен имейл !
                     </mat-error>
                 </mat-form-field>
             </div>
@@ -16,10 +16,10 @@
                 <mat-form-field id="passField">
                     <input type="password" matInput placeholder="Password" formControlName="password">
                     <mat-error *ngIf="password.required">
-                        Password is required !
+                        Полето парола е задължително !
                     </mat-error>
                     <mat-error *ngIf="password.invalid && password.touched">
-                        Password must contain atleast 6 characters !
+                        Паролата трябва да съдържа минимум 6 символа !
                     </mat-error>
                 </mat-form-field>
 
@@ -29,22 +29,22 @@
                 <mat-form-field id="confPassField">
                     <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
                     <mat-error *ngIf="confirmPassword.required">
-                        You must confirm your password !
+                        Трябва да потвърдите паролата си !
                     </mat-error>
                     <mat-error *ngIf="confirmPassword.ConfirmPasswordValidator">
-                        Passwords doesn't match !
+                        Паролите не съвпадат !
                     </mat-error>
                 </mat-form-field>
             </div>
 
             <div class="button">
                 <button type="submit" mat-button id="registerBtn" [disabled]="registerForm.invalid"
-                    (click)="tryRegister(registerForm.value)">Register</button>
+                    (click)="tryRegister(registerForm.value)">Регистрирай се</button>
             </div>
             <hr>
             <div class="redirectToLogin">
-                <span>Already have an account?
-                    <span class="redirect" routerLink="/login" id="logNowBtn">Log In!
+                <span>Вече имаш акаунт?
+                    <span class="redirect" routerLink="/login" id="logNowBtn">Влез!
                     </span>
                 </span>
             </div>

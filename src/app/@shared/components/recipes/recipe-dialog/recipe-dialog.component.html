@@ -1,0 +1,17 @@
+<mat-form (ngSubmit)="updateRecipe(recipe)">
+  <div class="example-container">
+    <h1 mat-dialog-title class="text-center"><strong>Редактиране</strong></h1>
+    <mat-form-field>
+      <input matInput placeholder="Въведете Заглавие на Вашата Рецепта:" [(ngModel)]="recipe.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Нужни Продукти:" [(ngModel)]="recipe.description" name="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Поставете линк към снимка на ястието:" [(ngModel)]="recipe.imagePath"
+        name="imagePath">
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button id="dialogEditBtn" (click)="updateRecipe()">Запази промените !</button>
+  </div>
+</mat-form>

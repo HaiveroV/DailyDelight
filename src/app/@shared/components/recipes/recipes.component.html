@@ -1,37 +1,34 @@
-<mat-card class="card card-1">
-  <div class="img__wrap ">
-    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
-    <img class="img" src="../../../../assets/images/3.jpg">
-    <button class="img__text" button mat-raised-button (click)="openDialog()">View Recipe</button>
-  </div>
-  <mat-card-title class="title__wrap">
-    <mat-card-title-text>
-      <span class="md-headline">Home Made Eggs</span>
-    </mat-card-title-text>
-  </mat-card-title>
-  <mat-card-subtitle class="time">French Style
-  </mat-card-subtitle>
-  <mat-card-actions class="actions">
-    <button mat-raised-button color="primary">Edit</button>
-    <button mat-raised-button color="warn">Delete</button>
-  </mat-card-actions>
-</mat-card>
+<!--
+  CODE BELOW DOESN'T WORK AS SMOOTH AS NEEDS TO BE SO WHEN NO RECIPES ARE FOUND BLANK PAGE IS LEFT TO BE DISPLATED
+  WHICH SHOULD BE FIXED LATER ON!
+-->
+<div *ngIf="recipes?.length > 0; else noRecipes"></div>
 
-<mat-card class="card card-1">
+<ng-template #noRecipes>
+  <hr class="loadingLine" color="white">
+  <h4 class="text-center" style="color:snow">Няма налични рецепти</h4>
+  <hr class="loadingLine" color="white">
+  <button mat-raised-button class="primary" id="#noRecipeBtn" (click)="noRecipe()">Добавете вашите идеи !</button>
+</ng-template>
+
+
+<mat-card class="card card-1" *ngFor="let recipe of recipes">
   <div class="img__wrap ">
-    <star-rating [starType]="'svg'" [rating]="5"></star-rating>
-    <img class="img" src="../../../../assets/images/2.jpg">
-    <button class="img__text" button mat-raised-button (click)="openDialog()">View Recipe</button>
+    <img class="img" src="{{recipe.imagePath}}">
+    <star-rating [starType]="'svg'" [rating]='5'></star-rating>
   </div>
   <mat-card-title class="title__wrap">
     <mat-card-title-text>
-      <span class="md-headline">Home Made Eggs</span>
+      <span class="md-headline">{{recipe.name}}</span>
     </mat-card-title-text>
   </mat-card-title>
-  <mat-card-subtitle class="time">French Style
+  <mat-card-subtitle class="time">Описание: {{recipe.description}}
   </mat-card-subtitle>
-  <mat-card-actions class="actions">
-    <button mat-raised-button color="primary">Edit</button>
-    <button mat-raised-button color="warn">Delete</button>
+  <mat-card-subtitle class="time">Изготвил: {{recipe.author}}
+  </mat-card-subtitle>
+  <mat-card-actions class="actions" *ngIf="admin === 'admin@admin.com'">
+    <button mat-raised-button id="editBtn" (click)="openDialog()">Редактирай</button>
+    <button mat-raised-button id="deleteBtn" (click)="deleteRecipe($event, recipe)">Изтрий</button>
   </mat-card-actions>
 </mat-card>
+<alert-app></alert-app>
