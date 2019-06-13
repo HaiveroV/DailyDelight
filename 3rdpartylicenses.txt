@@ -61,7 +61,8 @@ MIT
 MIT
 
 @angular/fire/auth
-MIT
+
+@angular/fire/firestore
 
 @angular/forms
 MIT
@@ -93,7 +94,13 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/card
+
 @angular/material/core
+
+@angular/material/dialog
+
+@angular/material/form-field
 
 @angular/material/icon
 
@@ -323,6 +330,9 @@ Apache-2.0
 
 @firebase/util
 Apache-2.0
+
+angular-star-rating
+MIT
 
 bootstrap
 MIT
