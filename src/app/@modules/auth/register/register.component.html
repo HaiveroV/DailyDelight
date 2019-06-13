@@ -25,7 +25,10 @@
             <div class="form-group">
                 <mat-form-field id="confPassField">
                     <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
-                    <mat-error *ngIf="confirmPassword.ConfirmPasswordValidator">
+                    <!-- <mat-error *ngIf="confirmPassword.required">
+                        Трябва да потвърдите паролата си !
+                    </mat-error> -->
+                    <mat-error *ngIf="confirmPassword.setErrors">
                         Паролите не съвпадат !
                     </mat-error>
                 </mat-form-field>
