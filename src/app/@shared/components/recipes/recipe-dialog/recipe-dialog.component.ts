@@ -14,18 +14,17 @@ import { AlertService } from '../../../../@core/services/alert.service';
 export class RecipeDialogComponent implements OnInit {
 
   
-  recipeToEdit: Recipe;
-  editState: boolean = false;
+  // recipeToEdit: Recipe;
 
-  recipe: Recipe = {
-    id: '',
-    name: '',
-    description: '',
-    imagePath: '',
-    author: this.afAuth.auth.currentUser.email,
-    rating: 0
+  // recipe: Recipe = {
+  //   id: '',
+  //   name: '',
+  //   description: '',
+  //   imagePath: '',
+  //   author: this.afAuth.auth.currentUser.email,
+  //   rating: 0
 
-  }
+  // }
 
   constructor(
     private recipeService: RecipeService,
@@ -34,7 +33,7 @@ export class RecipeDialogComponent implements OnInit {
     private authService: AuthService,
     private alertService: AlertService
   ) {
-    let uEmail = this.afAuth.auth.currentUser.email
+    // let uEmail = this.afAuth.auth.currentUser.email
 
   }
   ngOnInit(): void {
@@ -44,14 +43,11 @@ export class RecipeDialogComponent implements OnInit {
 
   }
 
-  updateRecipe(recipe: Recipe) {
-    this.recipeService.updateRecipe(recipe);
-    this.clearState();
-  }
+  // updateRecipe(recipe: Recipe) {
+  //   this.recipeService.updateRecipe(recipe);
+  
+  // }
 
-  clearState() {
-    this.editState = false;
-    this.recipeToEdit = null;
-  }
+  
 
 }

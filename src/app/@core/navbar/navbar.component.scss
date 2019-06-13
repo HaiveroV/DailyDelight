@@ -61,14 +61,19 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  #privacyLink {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
   #navHeading {
     display: none;
   }
 }
 
 @media (max-width: 530px) {
-  #privacyLink,
   #homeLink,
   #recipesLink {
     display: none;
@@ -81,7 +86,7 @@
   }
 }
 
-#linkLogo{
+#linkLogo {
   text-decoration: none;
   color: #ffff;
 }

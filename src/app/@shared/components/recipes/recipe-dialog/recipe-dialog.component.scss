@@ -1,71 +1,71 @@
-.example-container {
-  flex-direction: column !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.example-container > * {
-  width: 50%;
-  margin-top: 2rem;
-}
-
-// .matInput {
-//   text-align: center !important;
-//   color: snow;
-//   font-size: 20px;
+// .example-container {
+//   flex-direction: column !important;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 // }
 
-#hambImgTop {
-  display: block;
-  margin: 0.25rem auto 0 auto;
-}
+// .example-container > * {
+//   width: 50%;
+//   margin-top: 2rem;
+// }
 
-#hambImgBot {
-  display: block;
-  margin: 0.25rem auto 1.5rem auto;
-}
+// // .matInput {
+// //   text-align: center !important;
+// //   color: snow;
+// //   font-size: 20px;
+// // }
 
-.mat-form-field-appearance-legacy {
-  color: white;
-  text-align: center;
-}
+// #hambImgTop {
+//   display: block;
+//   margin: 0.25rem auto 0 auto;
+// }
 
-select.mat-input-element {
-  text-align: center;
-}
+// #hambImgBot {
+//   display: block;
+//   margin: 0.25rem auto 1.5rem auto;
+// }
 
-#addRecipeContainer {
-  background-color: #424242;
-  position: absolute;
-  text-align: center;
-  top: 64px;
-  right: 0;
-  bottom: -81px;
-  left: 0;
-}
+// .mat-form-field-appearance-legacy {
+//   color: white;
+//   text-align: center;
+// }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0 0 0px 1000px inherit inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
+// select.mat-input-element {
+//   text-align: center;
+// }
 
-#dialogEditBtn {
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(to right, #00f260 0%, #05e690 51%, #00f260 100%);
-  box-shadow: 0 4px 15px 0 rgba(0, 242, 96, 0.712);
-}
+// #addRecipeContainer {
+//   background-color: #424242;
+//   position: absolute;
+//   text-align: center;
+//   top: 64px;
+//   right: 0;
+//   bottom: -81px;
+//   left: 0;
+// }
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// textarea:-webkit-autofill,
+// textarea:-webkit-autofill:hover,
+// textarea:-webkit-autofill:focus,
+// select:-webkit-autofill,
+// select:-webkit-autofill:hover,
+// select:-webkit-autofill:focus {
+//   -webkit-text-fill-color: #ffffff;
+//   -webkit-box-shadow: 0 0 0px 1000px inherit inset;
+//   transition: background-color 5000s ease-in-out 0s;
+// }
+
+// #dialogEditBtn {
+//   border: none;
+//   background-size: 300% 100%;
+//   border-radius: 50px;
+//   -o-transition: all 0.4s ease-in-out;
+//   -webkit-transition: all 0.4s ease-in-out;
+//   transition: all 0.4s ease-in-out;
+//   background-image: linear-gradient(to right, #00f260 0%, #05e690 51%, #00f260 100%);
+//   box-shadow: 0 4px 15px 0 rgba(0, 242, 96, 0.712);
+// }

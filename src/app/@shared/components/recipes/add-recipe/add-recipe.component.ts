@@ -43,7 +43,8 @@ export class AddRecipeComponent implements OnInit {
   onSubmit() {
     if (this.recipe.name != '' && this.recipe.description != '') {
       this.recipeService.addRecipe(this.recipe);
-      this.alertService.success('Вашата рецепта беше добавена успешно!')
+      this.alertService.success('Вашата рецепта беше добавена успешно!');
+      this.router.navigate(['/recipes']);
     } else {
       this.alertService.error('Рецептата трябва да съдържа Заглавие и Продукти!')
       this.recipe.name = '';

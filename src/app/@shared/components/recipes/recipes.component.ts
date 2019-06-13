@@ -15,11 +15,10 @@ import { AlertService } from '../../../@core/services/alert.service';
 })
 export class RecipesComponent implements OnInit {
 
-  recipes: Recipe[];
+  recipes = new Array<any>();
   recipeToEdit: Recipe;
-
+  editState: boolean = false;
   admin;
-
   constructor(
     public dialog: MatDialog,
     private recipeService: RecipeService,
@@ -29,13 +28,17 @@ export class RecipesComponent implements OnInit {
     private authService: AuthService,
     private afAuth: AngularFireAuth
   ) {
-     this.admin = this.afAuth.auth.currentUser.email;
+    this.admin = this.afAuth.auth.currentUser.email;
   }
 
   ngOnInit() {
+    this.getAllRecipes();
+  }
+
+  getAllRecipes() {
     this.recipeService.getRecipes().subscribe(recipes => {
-      // console.log(recipes);
-      this.recipes = recipes;
+      this.recipes = [];
+      recipes.forEach(recipe => this.recipes.push(recipe as Recipe))
     });
   }
 
@@ -44,18 +47,35 @@ export class RecipesComponent implements OnInit {
   }
 
   deleteRecipe(event, recipe: Recipe) {
-    this.alertService.success('Рецептата беше премахната успешно !')
+    this.clearState();
     this.recipeService.deleteRecipe(recipe);
+    this.getAllRecipes();
+    this.alertService.success('Рецептата беше премахната успешно !')
   }
 
   noRecipe() {
     this.router.navigate(['./add-recipe'])
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(RecipeDialogComponent, {
-      width: '800px',
-    });
+  // openDialog(event,recipe): void {
+  //   const dialogRef = this.dialog.open(RecipeDialogComponent, {
+  //     width: '800px',
+  //   });
+  // }
+
+  editRecipe(event, recipe: Recipe) {
+    this.editState = true;
+    this.recipeToEdit = recipe;
+  }
+
+  updateRecipe(recipe: Recipe) {
+    this.recipeService.updateRecipe(recipe);
+    this.clearState();
+  }
+
+  clearState() {
+    this.editState = false;
+    this.recipeToEdit = null;
   }
 
 }

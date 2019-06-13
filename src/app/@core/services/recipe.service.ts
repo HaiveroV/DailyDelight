@@ -25,8 +25,9 @@ export class RecipeService {
   constructor(
     public afs: AngularFirestore,
     public alertService: AlertService
-  ) {
+  ) { }
 
+  getRecipes() {
     this.recipesCollection = this.afs.collection('recipes');
 
     this.recipes = this.recipesCollection.snapshotChanges()
@@ -37,9 +38,6 @@ export class RecipeService {
           return data;
         })
       }))
-  }
-
-  getRecipes() {
     return this.recipes;
   }
 
@@ -47,17 +45,17 @@ export class RecipeService {
     this.recipesCollection.add(recipe);
   }
 
-  deleteRecipe(recipe: Recipe){
+  deleteRecipe(recipe: Recipe) {
     this.recipeDoc = this.afs.doc(`recipes/${recipe.id}`);
     this.recipeDoc.delete();
   }
 
-  getRecipeDesc(recipe: Recipe){
+  getRecipeDesc(recipe: Recipe) {
     this.desc = this.afs.doc(`recipes/${recipe.description}`)
     console.log(this.desc);
   }
 
-  updateRecipe(recipe: Recipe){
+  updateRecipe(recipe: Recipe) {
     this.recipeDoc = this.afs.doc(`recipes/${recipe.id}`);
     this.recipeDoc.update(recipe);
   }

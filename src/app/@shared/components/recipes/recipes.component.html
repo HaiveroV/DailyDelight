@@ -11,24 +11,52 @@
   <button mat-raised-button class="primary" id="#noRecipeBtn" (click)="noRecipe()">Добавете вашите идеи !</button>
 </ng-template>
 
+<div mat-container *ngFor="let recipe of recipes">
+  <mat-card class="card card-1">
+    <div class="img__wrap ">
+      <img class="img" src="{{recipe.imagePath}}">
+      <star-rating [starType]="'svg'" [rating]='5'></star-rating>
+    </div>
+    <mat-card-title class="title__wrap">
+      <mat-card-title-text>
+        <span class="md-headline">{{recipe.name}}</span>
+      </mat-card-title-text>
+    </mat-card-title>
+    <mat-card-subtitle class="time">Описание: {{recipe.description}}
+    </mat-card-subtitle>
+    <mat-card-subtitle class="time">Изготвил: {{recipe.author}}
+    </mat-card-subtitle>
+    <mat-card-actions class="actions" >
+      <button mat-raised-button id="editBtn" (click)="editRecipe($event, recipe)">Редактирай</button>
+      <button mat-raised-button id="deleteBtn" (click)="deleteRecipe($event, recipe)" *ngIf="admin === 'admin@admin.com'">Изтрий</button>
+    </mat-card-actions>
+  </mat-card>
 
-<mat-card class="card card-1" *ngFor="let recipe of recipes">
-  <div class="img__wrap ">
-    <img class="img" src="{{recipe.imagePath}}">
-    <star-rating [starType]="'svg'" [rating]='5'></star-rating>
-  </div>
-  <mat-card-title class="title__wrap">
-    <mat-card-title-text>
-      <span class="md-headline">{{recipe.name}}</span>
-    </mat-card-title-text>
-  </mat-card-title>
-  <mat-card-subtitle class="time">Описание: {{recipe.description}}
-  </mat-card-subtitle>
-  <mat-card-subtitle class="time">Изготвил: {{recipe.author}}
-  </mat-card-subtitle>
-  <mat-card-actions class="actions" *ngIf="admin === 'admin@admin.com'">
-    <button mat-raised-button id="editBtn" (click)="openDialog()">Редактирай</button>
-    <button mat-raised-button id="deleteBtn" (click)="deleteRecipe($event, recipe)">Изтрий</button>
-  </mat-card-actions>
-</mat-card>
+  <!-- UPDATE FORM BELOW-->
+
+  <mat-card class="card card-1" *ngIf=" editState && recipeToEdit.id==recipe.id" id="edit-container">
+    <form mat-form (ngSubmit)="updateRecipe(recipe)">
+      <div class="example-container">
+        <img src="../../../../assets/icons/close-icon.png" alt="close_icon" id="closeImg" (click)="clearState()">
+        <div class="form-field-width">
+            <mat-form-field class="editFormField" id="editTitle">
+              <input matInput placeholder="Ново Заглавие на Рецепта:" [(ngModel)]="recipe.name" name="name">
+            </mat-form-field>
+          </div>
+          <div class="form-field-width">
+        <mat-form-field class="editFormField" id="editDesc">
+          <textarea matInput placeholder="Начин на приготвяне:" [(ngModel)]="recipe.description"
+            name="description"></textarea>
+        </mat-form-field>
+      </div>
+        <mat-form-field class="editFormField" id="editImg">
+          <input matInput placeholder="Поставете линк към снимка на ястието:" [(ngModel)]="recipe.imagePath"
+            name="imagePath">
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary" (click)="ngSubmit" id="dialogEditBtn">Редактирай рецептата!</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
 <alert-app></alert-app>
