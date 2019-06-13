@@ -15,9 +15,6 @@
             <div class="form-group">
                 <mat-form-field id="passField">
                     <input type="password" matInput placeholder="Password" formControlName="password">
-                    <mat-error *ngIf="password.required">
-                        Полето парола е задължително !
-                    </mat-error>
                     <mat-error *ngIf="password.invalid && password.touched">
                         Паролата трябва да съдържа минимум 6 символа !
                     </mat-error>
@@ -28,9 +25,6 @@
             <div class="form-group">
                 <mat-form-field id="confPassField">
                     <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
-                    <mat-error *ngIf="confirmPassword.required">
-                        Трябва да потвърдите паролата си !
-                    </mat-error>
                     <mat-error *ngIf="confirmPassword.ConfirmPasswordValidator">
                         Паролите не съвпадат !
                     </mat-error>
