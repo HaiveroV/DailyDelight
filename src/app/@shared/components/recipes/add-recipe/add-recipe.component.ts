@@ -20,8 +20,7 @@ export class AddRecipeComponent implements OnInit {
     description: '',
     imagePath: '',
     author: this.afAuth.auth.currentUser.email,
-    rating: 0
-
+    rating: this.getRecipeRating()
   }
 
   constructor(
@@ -38,6 +37,11 @@ export class AddRecipeComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  getRecipeRating(){
+   let number = Math.floor(Math.random() * 5) +1 ;
+   return number;
   }
 
   onSubmit() {

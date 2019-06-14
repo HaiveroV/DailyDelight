@@ -15,7 +15,7 @@
   <mat-card class="card card-1">
     <div class="img__wrap ">
       <img class="img" src="{{recipe.imagePath}}">
-      <star-rating [starType]="'svg'" [rating]='5'></star-rating>
+      <star-rating [starType]="'svg'" [rating]='recipe.rating'></star-rating>
     </div>
     <mat-card-title class="title__wrap">
       <mat-card-title-text>

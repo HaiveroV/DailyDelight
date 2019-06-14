@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-
+import * as firebase from 'firebase';
+import 'firebase/firestore';
+import 'firebase/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
