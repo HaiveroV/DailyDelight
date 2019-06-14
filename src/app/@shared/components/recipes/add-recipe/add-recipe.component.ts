@@ -39,11 +39,7 @@ export class AddRecipeComponent implements OnInit {
 
   }
 
-  getRecipeRating(){
-   let number = Math.floor(Math.random() * 5) +1 ;
-   return number;
-  }
-
+  
   onSubmit() {
     if (this.recipe.name != '' && this.recipe.description != '') {
       this.recipeService.addRecipe(this.recipe);
@@ -55,5 +51,10 @@ export class AddRecipeComponent implements OnInit {
       this.recipe.description = '';
       this.recipe.imagePath = '';
     }
+  }
+  
+  getRecipeRating(){
+   let number = Math.floor(Math.random() * 5) +1 ;
+   return number;
   }
 }
